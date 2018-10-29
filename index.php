@@ -6,7 +6,11 @@
 $urlError = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if (empty($_POST["url"])) {
+	$urlError = "URL needed";
+	} else {
 	$url = test_input($_POST["url"]);
+}
 }
 
 function test_input($data) {
